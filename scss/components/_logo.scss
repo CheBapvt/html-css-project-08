@@ -1,0 +1,16 @@
+.logo {
+	/* Box model */
+	display: flex;
+	align-items: center;
+	column-gap: 14px;
+
+	&__title {
+		color: var(--Secondary-Color-Secondary-1, #1a162e);
+
+		/* Bold 22 */
+		font-family: Gordita;
+		font-size: 22px;
+		font-weight: 700;
+		line-height: 145.455%; /* 145.455% */
+	}
+}
