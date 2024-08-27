@@ -19,6 +19,8 @@
         border-radius: 20px;
 
         &::before {
+            content: url("../icons/dropdown-arrow.svg");
+
             /* Position */
             position: absolute;
             top: -13px;
@@ -26,7 +28,6 @@
             transform: translateX(-50%);
 
             /* Color */
-            content: url("../icons/dropdown-arrow.svg");
             filter: var(--dropdown-arrow-color);
         }
     }
