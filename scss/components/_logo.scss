@@ -1,15 +1,40 @@
+@use "../abstracts";
+
 .logo {
     /* Display & Box model */
     display: flex;
     align-items: center;
     column-gap: 14px;
 
+    @include abstracts.breakpoint(lg) {
+        /* Display & Box model */
+        column-gap: 10px;
+        margin-left: 40px;
+    }
+
+    @include abstracts.breakpoint(sm) {
+        /* Display & Box model */
+        margin-left: 0;
+    }
+
     &__title {
         /* Display & Box model */
         line-height: 145.455%;
 
-		/* Text */
-        font-size: 22px;
+        /* Text */
+        font-size: 2.2rem;
         font-weight: 700;
+
+        @include abstracts.breakpoint(lg) {
+            /* Text */
+            font-size: 1.8rem;
+        }
+    }
+
+    &__img {
+        @include abstracts.breakpoint(lg) {
+            /* Display & Box model */
+            width: 24px;
+        }
     }
 }

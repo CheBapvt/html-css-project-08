@@ -66,6 +66,7 @@ body {
   font-size: 1.6rem;
   font-family: "Gordita", sans-serif;
   color: var(--text-color);
+  background-color: var(--body-bg-color);
 }
 
 a {
@@ -1138,18 +1139,32 @@ html {
   --top-act-group-shadow: rgba(237, 237, 246, 0.2);
   --top-act-avt-shadow: rgba(0, 0, 0, 0.08);
   --top-act-separate: #ededf6;
+  /* Body variable */
+  --body-bg-color: #fafafd;
+}
+@media (max-width: 991.98px) {
+  html {
+    --header-bg-color: #fff;
+  }
 }
 
 html.dark {
   --text-color: #ffffff;
   --icon-color: brightness(0) saturate(100%) invert(97%) sepia(1%)
-  saturate(0%) hue-rotate(33deg) brightness(115%) contrast(100%);
+      saturate(0%) hue-rotate(33deg) brightness(115%) contrast(100%);
   /* Header variable */
   --header-bg-color: #171c28;
-  --top-act-group-bg-color: #292E39;
-  --top-act-group-shadow: rgba(0, 0, 0, 0.20);
+  --top-act-group-bg-color: #292e39;
+  --top-act-group-shadow: rgba(0, 0, 0, 0.2);
   --top-act-avt-shadow: rgba(0, 0, 0, 0.08);
-  --top-act-separate: #EDEDF6;
+  --top-act-separate: #ededf6;
+  /* Body variable */
+  --body-bg-color: #292e39;
+}
+@media (max-width: 991.98px) {
+  html.dark {
+    --header-bg-color: #171c28;
+  }
 }
 
 /* Header */
@@ -1162,35 +1177,56 @@ html.dark {
   /* Color */
   background-color: var(--header-bg-color);
 }
+
+.top-bar {
+  /* Align item center */
+  /* Display & Box model */
+  padding: 30px 0;
+}
 @media (max-width: 991.98px) {
-  .header {
-    width: 100px;
+  .top-bar {
+    padding: 16px 0;
   }
 }
 @media (max-width: 575.98px) {
-  .header {
-    width: 50px;
+  .top-bar {
+    justify-content: space-between;
+    padding: 16px 0;
   }
 }
-
-.top-bar {
-  /* Display & Box model */
-  padding: 30px 0;
+.top-bar__more {
+  display: none;
+}
+@media (max-width: 991.98px) {
+  .top-bar__more {
+    display: block;
+  }
 }
 
 .navbar {
   /* Display & Box model */
   margin-left: 144px;
-  margin-right: auto;
+}
+@media (max-width: 1199.98px) {
+  .navbar {
+    margin-left: 50px;
+  }
+}
+@media (max-width: 991.98px) {
+  .navbar {
+    display: none;
+  }
 }
 .navbar__list {
+  /* Align item center */
   /* Display & Box model */
   column-gap: 30px;
 }
 .navbar__link {
+  /* Align item center */
   /* Display & Box model */
   column-gap: 6px;
-  line-height: 146.667%; /* 146.667% */
+  line-height: 146.667%;
   /* Text */
   font-size: 15px;
   font-weight: 500;
@@ -1201,8 +1237,20 @@ html.dark {
 }
 
 .top-act {
+  /* Align item center */
   /* Display & Box model */
+  margin-left: auto;
   column-gap: 20px;
+}
+@media (max-width: 991.98px) {
+  .top-act {
+    margin-left: auto;
+  }
+}
+@media (max-width: 575.98px) {
+  .top-act {
+    margin-left: 0;
+  }
 }
 .top-act__separate {
   /* Display & Box model */
@@ -1212,6 +1260,7 @@ html.dark {
   background: var(--top-act-separate);
 }
 .top-act__group {
+  /* Align item center */
   /* Display & Box model */
   min-width: 50px;
   min-height: 50px;
@@ -1220,7 +1269,13 @@ html.dark {
   /* Color */
   background: var(--top-act-group-bg-color);
 }
+@media (max-width: 767.98px) {
+  .top-act__group {
+    display: none;
+  }
+}
 .top-act__btn {
+  /* Align item center */
   /* Display & Box model */
   column-gap: 10px;
   padding: 13px 20px;
@@ -1232,6 +1287,11 @@ html.dark {
   /* Text */
   font-size: 15px;
   font-weight: 500;
+}
+@media (max-width: 991.98px) {
+  .top-act__group--single {
+    display: none;
+  }
 }
 .top-act__group--single .top-act__btn {
   /* Display & Box model */
@@ -1253,12 +1313,37 @@ html.dark {
   align-items: center;
   column-gap: 14px;
 }
+@media (max-width: 991.98px) {
+  .logo {
+    /* Display & Box model */
+    column-gap: 10px;
+    margin-left: 40px;
+  }
+}
+@media (max-width: 575.98px) {
+  .logo {
+    /* Display & Box model */
+    margin-left: 0;
+  }
+}
 .logo__title {
   /* Display & Box model */
   line-height: 145.455%;
   /* Text */
-  font-size: 22px;
+  font-size: 2.2rem;
   font-weight: 700;
+}
+@media (max-width: 991.98px) {
+  .logo__title {
+    /* Text */
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 991.98px) {
+  .logo__img {
+    /* Display & Box model */
+    width: 24px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
