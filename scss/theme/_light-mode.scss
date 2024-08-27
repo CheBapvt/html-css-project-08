@@ -1,0 +1,12 @@
+html {
+    --text-color: #1a162e;
+    --icon-color: brightness(0) saturate(100%) invert(8%) sepia(7%)
+        saturate(5736%) hue-rotate(212deg) brightness(96%) contrast(96%);
+
+    /* Header variable */
+    --header-bg-color: #eee;
+    --top-act-group-bg-color: #fff;
+    --top-act-group-shadow: rgba(237, 237, 246, 0.2);
+    --top-act-avt-shadow: rgba(0, 0, 0, 0.08);
+    --top-act-separate: #ededf6;
+}
