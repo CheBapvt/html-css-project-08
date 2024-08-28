@@ -1409,13 +1409,14 @@ html.dark {
 }
 
 .top-menu {
-  /* Display & Box model */
-  max-height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
+  --main-column-width: 292px;
+  /* Position */
+  position: relative;
 }
 .top-menu__main {
   /* Display & Box model */
-  width: 292px;
-  max-height: inherit;
+  width: var(--main-column-width);
+  height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
   border-right: 1px solid var(--top-menu-border-color);
   overflow-y: auto;
 }
@@ -1425,6 +1426,9 @@ html.dark {
   display: flex;
   column-gap: 14px;
 }
+.menu-column + .menu-column {
+  margin-top: 22px;
+}
 .menu-column__icon {
   /* Position */
   position: relative;
@@ -1433,11 +1437,16 @@ html.dark {
   width: 36px;
   height: 36px;
 }
+@media (max-width: 1199.98px) {
+  .menu-column__icon {
+    display: none;
+  }
+}
 .menu-column__icon-1 {
   /* Display & Box model */
   width: 30px;
   height: 30px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .menu-column__icon-2 {
   /* Position */
@@ -1447,7 +1456,7 @@ html.dark {
   /* Display & Box model */
   width: 24px;
   height: 24px;
-  object-fit: cover;
+  object-fit: contain;
   /* Filter */
   filter: var(--top-menu-icon-color);
 }
@@ -1466,7 +1475,15 @@ html.dark {
 }
 .menu-column__list {
   /* Display & Box model */
-  margin-top: 19px;
+  margin-top: 13px;
+}
+.menu-column__item:hover .sub-menu {
+  display: grid;
+}
+.menu-column__item:hover > .menu-column__link {
+  text-shadow: 1px 0 0 currentColor;
+  color: var(--top-menu-text-hover-color);
+  display: grid;
 }
 .menu-column__link {
   /* Display & Box model */
@@ -1479,9 +1496,17 @@ html.dark {
   /* Color */
   color: var(--top-menu-text-color);
 }
-.menu-column__link:hover {
-  color: var(--top-menu-text-hover-color);
-  text-shadow: 1px 0 0 currentColor;
+
+.sub-menu {
+  /* Position */
+  position: absolute;
+  inset: 0 0 0 var(--main-column-width);
+  /* Display & Box model */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: var(--inner-padding);
+  padding-left: var(--inner-padding);
+  overflow-y: auto;
 }
 
 /*# sourceMappingURL=main.css.map */
