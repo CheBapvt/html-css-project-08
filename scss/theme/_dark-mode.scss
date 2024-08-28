@@ -1,28 +1,34 @@
 @use "../abstracts";
 
 html.dark {
-    /* Color variable */
-    --text-color: #ffffff;
-    --icon-color: brightness(0) saturate(100%) invert(97%) sepia(1%)
-        saturate(0%) hue-rotate(33deg) brightness(115%) contrast(100%);
+	/* Color variable */
+	--text-color: #ffffff;
+	--icon-color: brightness(0) saturate(100%) invert(97%) sepia(1%)
+		saturate(0%) hue-rotate(33deg) brightness(115%) contrast(100%);
 
-    /* Header variable */
-    --header-bg-color: #171c28;
-    --top-act-group-bg-color: #292e39;
-    --top-act-group-shadow: rgba(0, 0, 0, 0.2);
-    --top-act-avt-shadow: rgba(0, 0, 0, 0.08);
-    --top-act-separate: #ededf6;
+	/* Header variable */
+	--header-bg-color: #171c28;
+	--top-act-group-bg-color: #292e39;
+	--top-act-group-shadow: rgba(0, 0, 0, 0.2);
+	--top-act-avt-shadow: rgba(0, 0, 0, 0.08);
+	--top-act-separate: #ededf6;
 
-    @include abstracts.breakpoint(lg) {
-        --header-bg-color: #171c28;
-    }
+	@include abstracts.breakpoint(lg) {
+		--header-bg-color: #171c28;
+		--header-shadow-color: rgba(0, 0, 0, 0.2);
+	}
 
-    /* Body variable */
-    --body-bg-color: #292e39;
+	/* Body variable */
+	--body-bg-color: #292e39;
 
-    /* Dropdown variable*/
-    --dropdown-bg-color: #2f3441;
-    --dropdown-shadow-color: rgba(23, 28, 40, 0.4);
-    --dropdown-arrow-color: brightness(0) saturate(100%) invert(15%) sepia(9%)
-        saturate(1674%) hue-rotate(186deg) brightness(99%) contrast(84%);
+	/* Dropdown variable*/
+	--dropdown-bg-color: #2f3441;
+	--dropdown-shadow-color: rgba(23, 28, 40, 0.4);
+	--dropdown-arrow-color: brightness(0) saturate(100%) invert(15%) sepia(9%)
+		saturate(1674%) hue-rotate(186deg) brightness(99%) contrast(84%);
+	--top-menu-border-color: #171c28;
+	--top-menu-text-color: #b9babe;
+	--top-menu-text-hover-color: #0071dc;
+	--top-menu-icon-color: brightness(0) saturate(100%) invert(99%) sepia(5%)
+		saturate(157%) hue-rotate(217deg) brightness(113%) contrast(95%);
 }
