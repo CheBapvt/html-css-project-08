@@ -1477,10 +1477,10 @@ html.dark {
   /* Display & Box model */
   margin-top: 13px;
 }
-.menu-column__item:hover .sub-menu {
+.menu-column__item--active .sub-menu {
   display: grid;
 }
-.menu-column__item:hover > .menu-column__link {
+.menu-column__item--active > .menu-column__link, .menu-column__item:hover > .menu-column__link {
   text-shadow: 1px 0 0 currentColor;
   color: var(--top-menu-text-hover-color);
   display: grid;
@@ -1502,7 +1502,7 @@ html.dark {
   position: absolute;
   inset: 0 0 0 var(--main-column-width);
   /* Display & Box model */
-  display: grid;
+  display: none;
   grid-template-columns: repeat(3, 1fr);
   column-gap: var(--inner-padding);
   padding-left: var(--inner-padding);

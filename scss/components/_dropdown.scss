@@ -123,11 +123,12 @@
 	}
 
 	&__item {
-		&:hover .sub-menu {
+		&--active .sub-menu {
 			display: grid;
 		}
 	}
 
+	&__item--active > &__link,
 	&__item:hover > &__link {
 		text-shadow: 1px 0 0 currentColor;
 		color: var(--top-menu-text-hover-color);
@@ -155,7 +156,7 @@
 	inset: 0 0 0 var(--main-column-width);
 
 	/* Display & Box model */
-	display: grid;
+	display: none;
 	grid-template-columns: repeat(3, 1fr);
 	column-gap: var(--inner-padding);
 	padding-left: var(--inner-padding);
