@@ -6,7 +6,7 @@
 	left: 0;
 
 	/* Display & Box model */
-	// display: none;
+	display: none;
 	width: min(1240px, 100%);
 	padding-top: 54px;
 
@@ -162,4 +162,13 @@
 	padding-left: var(--inner-padding);
 
 	overflow-y: auto;
+
+	&--not-main {
+		position: initial;
+		inset: initial;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
+		padding-left: 0;
+	}
 }

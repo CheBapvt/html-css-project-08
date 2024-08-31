@@ -1382,6 +1382,7 @@ html.dark {
   position: absolute;
   left: 0;
   /* Display & Box model */
+  display: none;
   width: min(1240px, 100%);
   padding-top: 54px;
 }
@@ -1507,6 +1508,14 @@ html.dark {
   column-gap: var(--inner-padding);
   padding-left: var(--inner-padding);
   overflow-y: auto;
+}
+.sub-menu--not-main {
+  position: initial;
+  inset: initial;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
+  padding-left: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
