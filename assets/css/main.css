@@ -80,12 +80,15 @@ button {
   background: transparent;
 }
 
+a,
 button,
+img,
 input,
 textarea,
 select {
   font-family: inherit;
   color: inherit;
+  --webkit-tap-highlight-color: transparent;
 }
 
 .icon {
@@ -1226,10 +1229,12 @@ html.dark {
   }
 }
 .top-bar__more {
+  /* Display & Box model */
   display: none;
 }
 @media (max-width: 991.98px) {
   .top-bar__more {
+    /* Display & Box model */
     display: block;
   }
 }
@@ -1240,16 +1245,77 @@ html.dark {
 }
 @media (max-width: 1199.98px) {
   .navbar {
+    /* Display & Box model */
     margin-left: 28px;
   }
 }
 @media (max-width: 991.98px) {
   .navbar {
-    display: none;
+    /* Position */
+    position: fixed;
+    inset: 0 50% 0 0;
+    z-index: 9;
+    /* Display & Box model */
+    padding: 20px 0;
+    margin-left: 0;
+    background: #fff;
+    /* Animation */
+    transition: translate 0.5s;
+    translate: -100%;
+  }
+  .navbar.show {
+    translate: 0;
+  }
+  .navbar.show ~ .navbar__overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.navbar__close-btn {
+  /* Display & Box model */
+  display: none;
+}
+@media (max-width: 991.98px) {
+  .navbar__close-btn {
+    /* Display & Box model */
+    display: block;
+    padding: 10px 40px;
+  }
+}
+.navbar__overlay {
+  /* Display & Box model */
+  visibility: hidden;
+  opacity: 0;
+}
+@media (max-width: 991.98px) {
+  .navbar__overlay {
+    /* Position */
+    position: fixed;
+    inset: 0;
+    z-index: 8;
+    /* Display & Box model */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Animation */
+    transition: opacity 0.5s, visibility 0.5s;
+  }
+}
+@media (max-width: 991.98px) {
+  .navbar__list {
+    /* Display & Box model */
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 .navbar__item:hover .dropdown {
   display: block;
+}
+@media (max-width: 991.98px) {
+  .navbar__item {
+    width: 100%;
+  }
+  .navbar__item:hover .dropdown {
+    display: none;
+  }
 }
 .navbar__link {
   /* Align item center */
@@ -1261,6 +1327,16 @@ html.dark {
   /* Text */
   font-size: 15px;
   font-weight: 500;
+}
+@media (max-width: 991.98px) {
+  .navbar__link {
+    /* Display & Box model */
+    justify-content: space-between;
+    padding: 0 40px;
+    /* Text */
+    font-size: 1.6rem;
+    line-height: 150%;
+  }
 }
 .navbar__arrow {
   /* Display & Box model */
@@ -1510,8 +1586,10 @@ html.dark {
   overflow-y: auto;
 }
 .sub-menu--not-main {
+  /* Position */
   position: initial;
   inset: initial;
+  /* Display & Box model */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   height: calc(var(--inner-max-height) - var(--inner-padding) * 2);

@@ -164,8 +164,11 @@
 	overflow-y: auto;
 
 	&--not-main {
+		/* Position */
 		position: initial;
 		inset: initial;
+
+		/* Display & Box model */
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
